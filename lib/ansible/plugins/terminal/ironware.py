@@ -1,3 +1,4 @@
+
 #
 # (c) 2016 Red Hat Inc.
 #
@@ -42,9 +43,9 @@ class TerminalModule(TerminalBase):
         self.disable_pager()
 
     def disable_pager(self):
-        cmd = {u'command': u'terminal length 0'}
+        cmd = {u'command': u'skip-page-display'}
         try:
-            self._exec_cli_command(u'terminal length 0')
+            self._exec_cli_command(u'skip-page-display')
         except AnsibleConnectionFailure:
             raise AnsibleConnectionFailure('unable to disable terminal pager')
 
